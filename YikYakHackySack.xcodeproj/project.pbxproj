@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F38465491952056500A0E14D /* ChatterAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38465481952056500A0E14D /* ChatterAuthentication.swift */; };
+		F384654B1952059A00A0E14D /* ChatterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F384654A1952059A00A0E14D /* ChatterUser.swift */; };
+		F384654D19520A2200A0E14D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F384654C19520A2200A0E14D /* Message.swift */; };
+		F39D22AA1946603100F5F865 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D22A91946603100F5F865 /* main.swift */; };
+		F39D22B319466A6000F5F865 /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D22B219466A6000F5F865 /* HMAC.m */; };
+		F3DD3D741997B61E006E0092 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD3D731997B61E006E0092 /* Comment.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F39D22A41946603100F5F865 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F38465481952056500A0E14D /* ChatterAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatterAuthentication.swift; sourceTree = "<group>"; };
+		F384654A1952059A00A0E14D /* ChatterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatterUser.swift; sourceTree = "<group>"; };
+		F384654C19520A2200A0E14D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F39D22A61946603100F5F865 /* YikYakHackySack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YikYakHackySack; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39D22A91946603100F5F865 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F39D22B019466A6000F5F865 /* YikYakHackySack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YikYakHackySack-Bridging-Header.h"; sourceTree = "<group>"; };
+		F39D22B119466A6000F5F865 /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
+		F39D22B219466A6000F5F865 /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
+		F3DD3D731997B61E006E0092 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F39D22A31946603100F5F865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F39D229D1946603100F5F865 = {
+			isa = PBXGroup;
+			children = (
+				F39D22A81946603100F5F865 /* YikYakHackySack */,
+				F39D22A71946603100F5F865 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F39D22A71946603100F5F865 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F39D22A61946603100F5F865 /* YikYakHackySack */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F39D22A81946603100F5F865 /* YikYakHackySack */ = {
+			isa = PBXGroup;
+			children = (
+				F39D22A91946603100F5F865 /* main.swift */,
+				F39D22B119466A6000F5F865 /* HMAC.h */,
+				F39D22B219466A6000F5F865 /* HMAC.m */,
+				F39D22B019466A6000F5F865 /* YikYakHackySack-Bridging-Header.h */,
+				F384654A1952059A00A0E14D /* ChatterUser.swift */,
+				F38465481952056500A0E14D /* ChatterAuthentication.swift */,
+				F384654C19520A2200A0E14D /* Message.swift */,
+				F3DD3D731997B61E006E0092 /* Comment.swift */,
+			);
+			path = YikYakHackySack;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F39D22A51946603100F5F865 /* YikYakHackySack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F39D22AD1946603100F5F865 /* Build configuration list for PBXNativeTarget "YikYakHackySack" */;
+			buildPhases = (
+				F39D22A21946603100F5F865 /* Sources */,
+				F39D22A31946603100F5F865 /* Frameworks */,
+				F39D22A41946603100F5F865 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YikYakHackySack;
+			productName = YikYakHackySack;
+			productReference = F39D22A61946603100F5F865 /* YikYakHackySack */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F39D229E1946603100F5F865 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Expetelek;
+				TargetAttributes = {
+					F39D22A51946603100F5F865 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = F39D22A11946603100F5F865 /* Build configuration list for PBXProject "YikYakHackySack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F39D229D1946603100F5F865;
+			productRefGroup = F39D22A71946603100F5F865 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F39D22A51946603100F5F865 /* YikYakHackySack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F39D22A21946603100F5F865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39D22B319466A6000F5F865 /* HMAC.m in Sources */,
+				F3DD3D741997B61E006E0092 /* Comment.swift in Sources */,
+				F39D22AA1946603100F5F865 /* main.swift in Sources */,
+				F384654D19520A2200A0E14D /* Message.swift in Sources */,
+				F384654B1952059A00A0E14D /* ChatterUser.swift in Sources */,
+				F38465491952056500A0E14D /* ChatterAuthentication.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F39D22AB1946603100F5F865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F39D22AC1946603100F5F865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F39D22AE1946603100F5F865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/hetelek/Desktop,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YikYakHackySack/YikYakHackySack-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F39D22AF1946603100F5F865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/hetelek/Desktop,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YikYakHackySack/YikYakHackySack-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F39D22A11946603100F5F865 /* Build configuration list for PBXProject "YikYakHackySack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39D22AB1946603100F5F865 /* Debug */,
+				F39D22AC1946603100F5F865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F39D22AD1946603100F5F865 /* Build configuration list for PBXNativeTarget "YikYakHackySack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39D22AE1946603100F5F865 /* Debug */,
+				F39D22AF1946603100F5F865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F39D229E1946603100F5F865 /* Project object */;
+}
