@@ -26,6 +26,21 @@ user.refreshMessages()
 // loop through the messages, and print out information
 for message in user.messages
 {
-    println(message.message!)
-    println()
+    if let unwrappedMessageText = message.message
+    {
+        // print message
+        println("* \(unwrappedMessageText)")
+        
+        // print comments
+        let comments: [Comment] = user.getComments(message)
+        for comment in comments
+        {
+            if let unwrappedCommentText = comment.comment
+            {
+                println("\t- \(unwrappedCommentText)")
+            }
+        }
+        
+        println()
+    }
 }
