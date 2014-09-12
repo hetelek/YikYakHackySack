@@ -15,15 +15,15 @@
     let baseUrl = "https://yikyakapp.com"
     let registerUrl = "/api/registerUser?userID=%@"
     let messagesUrl = "/api/getMessages?userID=%@&lat=%f&long=%f"
-    let likeMessageUrl = "/api/likeMessage?messageID=%d&userID=%@"
-    let downvoteMessageUrl = "/api/downvoteMessage?messageID=%d&userID=%@"
+    let likeMessageUrl = "/api/likeMessage?messageID=%@&userID=%@"
+    let downvoteMessageUrl = "/api/downvoteMessage?messageID=%@&userID=%@"
     let sendMessageUrl = "/api/sendMessage"
     let deleteMessageUrl = "/api/deleteMessage2?messageID=%d&userID=%@"
-    let commentsUrl = "/api/getComments?messageID=%d&userID=%@"
+    let commentsUrl = "/api/getComments?messageID=%@&userID=%@"
     let postCommentUrl = "/api/postComment"
-    let deleteCommentUrl = "/api/deleteComment?commentID=%d&userID=%@&messageID=%d"
-    let likeCommentUrl = "/api/likeComment?commentID=%d&userID=%@"
-    let downvoteCommentUrl = "/api/downvoteComment?commentID=%d&userID=%@"
+    let deleteCommentUrl = "/api/deleteComment?commentID=%@&userID=%@&messageID=%@"
+    let likeCommentUrl = "/api/likeComment?commentID=%@&userID=%@"
+    let downvoteCommentUrl = "/api/downvoteComment?commentID=%@&userID=%@"
     
     // variables
     var messages: [Message] = []
@@ -75,7 +75,7 @@
         {
             // get the data, and parse it as json
             let encodedData = messageResponseUnwrapped.dataUsingEncoding(NSUTF8StringEncoding)
-            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(encodedData, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary
+            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(encodedData!, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary
             
             if let jsonObjectUnwrapped: AnyObject = jsonObject
             {
@@ -88,19 +88,20 @@
                     let comments = message["comments"] as? Int
                     let deliveryID = message["deliveryID"] as? Int
                     let handle = message["handle"] as? String
-                    let hidePin = message["hidePin"] as? Int
+                    let hidePin = message["hidePin"] as? String
                     let latitude = message["latitude"] as? Double
                     let longitude = message["longitude"] as? Double
                     let liked = message["liked"] as? Int
-                    let messageID = message["messageID"] as? Int
-                    let numberOfLikes = message["numberOfLikes"] as? String
+                    let messageID = message["messageID"] as? String
+                    let numberOfLikes = message["numberOfLikes"] as? Int
                     let posterID = message["posterID"] as? String
                     let reyaked = message["reyaked"] as? Int
                     let time = message["time"] as? String
-                    let type = message["type"] as? Int
+                    let type = message["type"] as? String
                     
                     // create the message object, append it to the array
-                    let messageObject = Message(comments: comments, deliveryID: deliveryID, handle: handle, hidePin: hidePin, latitude: latitude, longitude: longitude, liked: liked, message: messageText, messageID: messageID, numberOfLikes: numberOfLikes!.toInt(), posterID: posterID, reyaked: reyaked, time: time, type: type)
+                    let messageObject = Message(comments: comments, deliveryID: deliveryID, handle: handle, hidePin: hidePin?.toInt(), latitude: latitude, longitude: longitude, liked: liked, message: messageText, messageID: messageID, numberOfLikes: numberOfLikes, posterID: posterID, reyaked: reyaked, time: time, type: type?.toInt())
+                    
                     self.messages.append(messageObject)
                 }
             }
@@ -161,7 +162,7 @@
     {
         // create the url, make the request
         let userDownvoteCommentUrl = self.baseUrl + ChatterAuthentication.signedUrl(String(format: self.downvoteCommentUrl, comment.commentID!, self.userID))
-        getResponse(userDownvoteCommentUrl, headers: [ "Cookie": "userID=\(self.userID)" ], postData: nil)
+        getResponse(userDownvoteCommentUrl, headers: [ "Cookie": "lat=\(self.latitude); long=\(self.longitude)" ], postData: nil)
     }
     
     func getComments(message: Message) -> [Comment]
@@ -176,7 +177,7 @@
         {
             // parse the data as json
             let encodedData = commentsResponseUnwrapped.dataUsingEncoding(NSUTF8StringEncoding)
-            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(encodedData, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary
+            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(encodedData!, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary
             
             if let jsonObjectUnwrapped: AnyObject = jsonObject
             {
@@ -186,9 +187,9 @@
                 {
                     // parse the comments
                     let commentText = comment["comment"] as? String
-                    let commentID = comment["commentID"] as? Int
+                    let commentID = comment["commentID"] as? String
                     let liked = comment["liked"] as? Int
-                    let numberOfLikes = (comment["numberOfLikes"] as? String)?.toInt()
+                    let numberOfLikes = comment["numberOfLikes"] as? Int
                     let posterID = comment["posterID"] as? String
                     let time = comment["time"] as? String
                     
@@ -242,7 +243,7 @@
                 
                 // else, add the original character
             default:
-                userID += character
+                userID += String(character)
             }
         }
         
@@ -253,7 +254,8 @@
     {
         // set up the mutable request (user-agent to YikYak's)
         let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: url))
-        request.addValue("Yik%20Yak/1.4.1 CFNetwork/672.0.8 Darwin/14.0.0", forHTTPHeaderField: "User-Agent")
+        request.addValue("Yik Yak/11 (iPhone; iOS 7.1.2; Scale/2.00)", forHTTPHeaderField: "User-Agent")
+        request.addValue("en;q=1, fr;q=0.9, de;q=0.8, ja;q=0.7, nl;q=0.6, it;q=0.5", forHTTPHeaderField: "Accept-Language")
         request.timeoutInterval = 3
         
         // add headers (if any)

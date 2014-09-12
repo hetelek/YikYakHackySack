@@ -9,7 +9,7 @@
 struct Comment
 {
     var comment: String?
-    var commentID: Int?
+    var commentID: String?
     var liked: Int?
     var numberOfLikes: Int?
     var posterID: String?

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Expetelek. All rights reserved.
 //
 
-struct Message
+struct Message : Printable
 {
     var comments: Int?
     var deliveryID: Int?
@@ -16,10 +16,16 @@ struct Message
     var longitude: Double?
     var liked: Int?
     var message: String?
-    var messageID: Int?
+    var messageID: String?
     var numberOfLikes: Int?
     var posterID: String?
     var reyaked: Int?
     var time: String?
     var type: Int?
+    
+    var description: String
+    {
+        let dataAsDictionary = [ "Comments": comments, "Delivery ID": deliveryID, "Handle": handle, "Hide Pin": hidePin, "Latitude": latitude, "Longitude": longitude, "Liked": liked, "Message": message, "Message ID": messageID, "Number Of Likes": numberOfLikes, "Poster ID": posterID, "Reyaked": reyaked, "Time": time, "Type": type ]
+        return dataAsDictionary.description
+    }
 }

@@ -37,7 +37,7 @@ class ChatterAuthentication
         }
         
         // add the computed salt and hash to the url
-        if url.rangeOfString("?")
+        if url.rangeOfString("?") != nil
         {
             return String(format: "%@&salt=%@&hash=%@", url, salt, hash)
         }
